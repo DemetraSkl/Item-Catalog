@@ -1,0 +1,44 @@
+{% extends "main.html" %} {% block content %}
+<div class='flash'>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+</div>
+<!-- If a user is connected, then they can create new items -->
+{%if 'username' in session %}
+<div class="row padding-top padding-bottom">
+    <div class="col-md-1"></div>
+    <div class="col-md-10 padding-none">
+        <a href="{{url_for('newItem')}}">
+            <button class="btn btn-default" id="new-item">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Item
+            </button>
+        </a>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+{% endif %}
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-2 category-list">
+        <h2>Categories</h2> {% for category in catalog %}
+        <a href="{{url_for('showCategory', category_id = category.id)}}">
+            <h3>{{category.name}}</h3>
+        </a>
+        {% endfor %}
+    </div>
+    <div class="col-md-3 items">
+        {% if is_category %} {%include "category.html"%} {%else %}
+        <h2>Latest Items</h2> {% for i in recentItems %}
+        <a href="{{url_for('showItem', category_id=i.category_id, item_id=i.id)}}">
+            <h3>{{i.name}}<small>{{" (" + i.category.name + ")"}}</small></h3>
+        </a>
+        {% endfor %} {% endif %}
+    </div>
+    <div class="col-md-6"></div>
+</div>
+{% endblock %}

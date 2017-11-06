@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+{% block content %}
+
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			<h1>Delete Item</h1>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			<p>Are you sure ou want to delete {{item.name}}?</p>
+		</div>
+		<div class="col-md-1"></div>	
+	</div>
+	<div class="row padding-top padding-bottom">
+		<div class="col-md-1"></div>
+		<div class="col-md-11 padding-none">
+			<form action="{{url_for('deleteItem', category_id=category.id, item_id=item.id)}}" method = 'post'>
+
+				<button type="submit" class="btn btn-default delete" id="submit" type="submit">
+				<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Delete</button>
+				<a href = "{{url_for('showCategory', category_id=category.id )}}">
+					<button type="button" class="btn btn-default delete">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+				</a>
+			</form>
+		</div>
+	</div>
+
+{% endblock %}

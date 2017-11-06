@@ -1,0 +1,13 @@
+<h2>{{category.name + " (" + itemNum + " items)"}}</h2>
+{% if items !=[] %}
+	{% for i in items %}
+		<a href = "{{url_for('showItem', category_id = category.id, item_id=i.id)}}">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<h3>{{i.name}}</h3>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+	{% endfor %}
+{% endif %}

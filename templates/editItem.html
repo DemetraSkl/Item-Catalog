@@ -1,0 +1,46 @@
+{% extends "main.html" %}
+{% block content %}
+
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			<h1>Edit Item</h1>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-6">
+			<form action="{{url_for('editItem', category_id=category.id, item_id=item.id)}}" method="post">
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type="text" maxlength="250" class="form-control" name="name" value="{{item.name}}">
+					</br>
+					<label for="category">Category:</label>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="category" id="category1" value="Breads" {% if item.category == 'Breads'%} checked{%endif%}> Bread
+					  </label>
+					</div>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="category" id="category2" value="Soups" {% if item.category == 'Soups'%} checked{%endif%}> Soup
+					  </label>
+					</div>
+					</br>
+					<label for="description">Description:</label>
+					<textarea class="form-control" maxlength="600" rows="10" name="description">{{item.description}}</textarea>
+					</br>
+					<button type="submit" class="btn btn-default" id="submit" type="submit">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save</button>
+					<a href = "{{url_for('showItem', category_id=category.id, item_id=item.id)}}">
+						<button type="button" class="btn btn-default delete">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+					</a>
+				</div>
+			</form>
+		</div>		
+	</div>
+
+{% endblock %}

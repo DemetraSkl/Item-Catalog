@@ -1,0 +1,119 @@
+html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: auto;
+}
+
+body { 
+	background-color: #EAE7DC;
+}
+
+* {
+	font-family: "Helvetica Neue Bold", Roboto, Helvetica, Arial, sans-serif;
+	font-weight: 700;
+}
+
+h1 {
+	font-family: "Helvetica Neue Light", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 45px;
+	color: #51453B;
+	line-height: 60px;
+	font-weight: 300;
+}
+
+h2 {
+	font-size: 24px;
+	color: #E85A4F;
+	line-height: 29px;
+}
+
+h3 {
+	font-size: 18px;
+	color: #4A4A4A;
+	line-height: 23px;
+}
+
+strong {
+ 	font-size: 16px;
+ 	color: #7B7573;
+ 	line-height: 24px;
+ }
+
+a {
+	text-decoration: none;
+}
+
+/* Top menu formatting */
+.glyphicon {
+	margin-right: 10px;
+}
+.top-menu {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.top-menu p {
+	margin-bottom: 0;
+	line-height: 16px;
+}
+.top-menu a {
+	margin-bottom: 0;
+	line-height: 16px;
+	font-size: 16px;
+	color: #7B7573;
+	font-weight: 400;
+}
+
+/* Banner formatting */
+.divider {
+	height: 5px;
+	background-color: #51453B;
+}
+
+.banner {
+	background-color: #E98074;
+}
+
+
+.idk {
+	margin-top: 10px;
+}
+
+/* Button formatting */
+.btn {
+	padding: 10px;
+	margin: 0;
+	border-color: #E85A4F;
+	border-width: 2px;
+	color: #E85A4F;
+	background-color: #EAE7DC;
+}
+
+.btn:hover {
+	border-color: #E85A4F;
+}
+.btn.delete {
+	border-color: #aaaaaa;
+	color: #aaaaaa;
+}
+.btn.delete:hover {
+	border-color: #aaaaaa;
+	color: #E85A4F;
+}
+
+
+.items {
+	border-left: 2px dashed #E85A4F;
+}
+
+
+/* flash messages */
+.flash {
+	text-decoration: none;
+
+}
+
+.flash li {
+	list-style-type: none;
+	text-align: center;
+}
